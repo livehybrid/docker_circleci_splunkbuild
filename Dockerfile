@@ -4,6 +4,8 @@ MAINTAINER Will Searle <will@livehybrid.com>
 RUN sudo apt-get update && \
     sudo apt-get install -y python2 python-pip python-virtualenv python3 python3.7 python3-pip python3-virtualenv
 
+RUN sudo apt-get -y install grip librsvg2-bin texlive-latex-recommended texlive-pictures texlive-latex-extra pandoc
+
 RUN python3.7 -m virtualenv ~/.venv -p python3
 
 RUN . ~/.venv/bin/activate && \
