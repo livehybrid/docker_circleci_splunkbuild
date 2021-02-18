@@ -1,3 +1,7 @@
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/livehybrid/splunk-ci-build)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/livehybrid/splunk-ci-build)
+![Docker Pulls](https://img.shields.io/docker/pulls/livehybrid/splunk-ci-build)
+
 # Introduction
 This uses Splunk's App Packaging Toolkit and UCC Generator including utils for PDF Generation
 
