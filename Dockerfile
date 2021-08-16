@@ -12,5 +12,5 @@ RUN . ~/.venv/bin/activate && \
     pip install splunk_add_on_ucc_framework && \
     pip install https://download.splunk.com/misc/packaging-toolkit/splunk-packaging-toolkit-1.0.1.tar.gz
 
-RUN git clone https://github.com/livehybrid/addonfactory-ucc-generator.git /tmp/ucc/
-RUN cp -R /tmp/ucc/splunk_add_on_ucc_framework ~/.venv/lib/python3.7/site-packages/
+#RUN git clone https://github.com/livehybrid/addonfactory-ucc-generator.git /tmp/ucc/
+#RUN cp -R /tmp/ucc/splunk_add_on_ucc_framework ~/.venv/lib/python3.7/site-packages/
