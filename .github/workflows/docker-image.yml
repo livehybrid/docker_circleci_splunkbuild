@@ -20,6 +20,10 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag livehybrid/splunk-ci-build:$(date +%s) --tag livehybrid/splunk-ci-build:latest
+    -
+      name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: livehybrid/splunk-ci-build:latest
