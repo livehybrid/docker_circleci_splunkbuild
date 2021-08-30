@@ -6,7 +6,7 @@ RUN sudo apt-get update && \
 
 RUN sudo apt-get -y install librsvg2-bin texlive-latex-recommended texlive-pictures texlive-latex-extra pandoc curl crudini
 
-RUN python3.7 -m virtualenv ~/.venv -p python3
+RUN python3 -m virtualenv ~/.venv -p python3
 
 RUN . ~/.venv/bin/activate && \
     pip install splunk_add_on_ucc_framework && \
