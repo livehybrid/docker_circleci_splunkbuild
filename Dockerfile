@@ -1,6 +1,9 @@
 FROM circleci/buildpack-deps:stable
 MAINTAINER Will Searle <will@livehybrid.com>
 
+USER root 
+# Root needed to connect with Docker socket, due to group IDs in containers not matching group id on hosts
+
 RUN sudo apt-get update && \
     sudo apt-get install -y python3 python3-pip python3-virtualenv
 
