@@ -2,7 +2,7 @@ FROM circleci/buildpack-deps:stable
 MAINTAINER Will Searle <will@livehybrid.com>
 
 RUN sudo apt-get update && \
-    sudo apt-get install -y python3 python3.8 python3-pip python3-virtualenv
+    sudo apt-get install -y python3 python3-pip python3-virtualenv
 
 RUN sudo apt-get -y install grip librsvg2-bin texlive-latex-recommended texlive-pictures texlive-latex-extra pandoc
 
