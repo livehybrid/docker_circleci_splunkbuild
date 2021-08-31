@@ -1,16 +1,19 @@
 FROM circleci/buildpack-deps:stable
 MAINTAINER Will Searle <will@livehybrid.com>
 
+USER root 
+# Root needed to connect with Docker socket, due to group IDs in containers not matching group id on hosts
+
 RUN sudo apt-get update && \
     sudo apt-get install -y python3 python3-pip python3-virtualenv
 
-RUN sudo apt-get -y install grip librsvg2-bin texlive-latex-recommended texlive-pictures texlive-latex-extra pandoc
+RUN sudo apt-get -y install librsvg2-bin texlive-latex-recommended texlive-pictures texlive-latex-extra pandoc curl crudini dnsutils
 
-RUN python3.7 -m virtualenv ~/.venv -p python3
-
+RUN python3 -m virtualenv ~/.venv -p python3
+RUN sudo chmod 777 /usr/share/man/man1/
 RUN . ~/.venv/bin/activate && \
-    pip install splunk_add_on_ucc_framework && \
-    pip install https://download.splunk.com/misc/packaging-toolkit/splunk-packaging-toolkit-1.0.1.tar.gz
+    pip3 install splunk_add_on_ucc_framework && \
+    pip3 install https://download.splunk.com/misc/packaging-toolkit/splunk-packaging-toolkit-1.0.1.tar.gz
 
 COPY requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
