@@ -12,6 +12,9 @@ RUN . ~/.venv/bin/activate && \
     pip install splunk_add_on_ucc_framework && \
     pip install https://download.splunk.com/misc/packaging-toolkit/splunk-packaging-toolkit-1.0.1.tar.gz
 
+COPY requirements.txt /tmp/requirements.txt
+RUN pip3 install -r /tmp/requirements.txt
+
 RUN echo "Install docker compose v2" && \
     mkdir -p ~/.docker/cli-plugins/ && \
     curl -SL https://github.com/docker/compose-cli/releases/download/v2.0.0-beta.6/docker-compose-linux-amd64 -o ~/.docker/cli-plugins/docker-compose && \
