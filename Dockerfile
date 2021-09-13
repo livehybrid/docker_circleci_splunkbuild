@@ -7,7 +7,7 @@ USER root
 RUN sudo apt-get update && \
     sudo apt-get install -y python3 python3-pip python3-virtualenv
 
-RUN sudo apt-get -y install librsvg2-bin texlive-latex-recommended texlive-pictures texlive-latex-extra pandoc curl crudini dnsutils
+RUN sudo apt-get -y install librsvg2-bin texlive-latex-recommended texlive-pictures texlive-latex-extra pandoc curl crudini dnsutils moreutils
 
 RUN python3 -m virtualenv ~/.venv -p python3
 RUN sudo chmod 777 /usr/share/man/man1/
